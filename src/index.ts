@@ -192,7 +192,7 @@
 //     }
 class Personaje {
 profesion?: string
-    private static equipo: number = 1
+private static equipo: number = 1
 constructor(
     public readonly id: number,
     public name:string,

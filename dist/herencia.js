@@ -14,7 +14,7 @@ class DatosBasicos {
         return this.created_at.getFullYear();
     }
     get fullDesc() {
-        return this.name + '' + this.desc;
+        return this.name + ' - ' + this.desc;
     }
 }
 class Producto extends DatosBasicos {
@@ -25,15 +25,23 @@ class Producto extends DatosBasicos {
         this.stock = stock;
         this.sku = sku;
     }
-    override;
     get fullDesc() {
         return 'Producto: ' + super.fullDesc;
+    }
+    guardar() {
+        console.log('guardando producto');
     }
 }
 class Categoria extends DatosBasicos {
     productos = [];
     constructor(name, desc, created_at, create_by) {
         super(name, desc, created_at, create_by);
+    }
+    get fullDesc() {
+        return 'Categoria: ' + super.fullDesc;
+    }
+    guardar() {
+        console.log('guardando Categoria');
     }
     agregarProductos(producto) {
         this.productos.push(producto);
@@ -42,5 +50,5 @@ class Categoria extends DatosBasicos {
 const producto1 = new Producto(100, 1, 'iphone', ' este es un smartPhone', new Date(), 1);
 const categoria = new Categoria('celulares', '', new Date(), 1);
 categoria.agregarProductos(producto1);
-console.log(producto1.fullDesc, categoria);
+console.log(producto1.fullDesc);
 //# sourceMappingURL=herencia.js.map

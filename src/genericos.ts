@@ -138,3 +138,4 @@ const readOnlyP: Readonly<Punto> ={
     y:3,
     desc: 'soy una descripcion'
 }
+
